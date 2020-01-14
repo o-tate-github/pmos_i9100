@@ -1,0 +1,41 @@
+http://dl-cdn.alpinelinux.org/alpine/
+
+
+http://dl-cdn.alpinelinux.org/alpine/latest-stable/main/armhf/
+
+http://dl-cdn.alpinelinux.org/alpine/latest-stable/main/armhf/apk-tools-static-2.10.4-r1.apk
+
+./sbin/apk.static -X http://dl-cdn.alpinelinux.org/alpine/latest-stable/main -U --allow-untrusted --root arm-alpine --initdb add alpine-base
+
+sudo mknod -m 666 /home/ximia/arm-alpine/dev/full c 1 7
+sudo mknod -m 666 /home/ximia/arm-alpine/dev/ptmx c 5 2
+sudo mknod -m 644 /home/ximia/arm-alpine/dev/random c 1 8
+sudo mknod -m 644 /home/ximia/arm-alpine/dev/urandom c 1 9
+sudo mknod -m 666 /home/ximia/arm-alpine/dev/zero c 1 5
+sudo mknod -m 666 /home/ximia/arm-alpine/dev/tty c 5 0
+
+sudo cp /etc/resolv.conf arm-alpine/etc/
+sudo mkdir -p arm-alpine/root
+
+mkdir -p arm-alpine/etc/apk
+echo "http://dl-cdn.alpinelinux.org/alpine/v3.10/main" > repositories
+sudo cp repositories arm-alpine/etc/apk/
+
+sudo mount -t proc none arm-alpine/proc
+sudo mount -o bind /sys arm-alpine/sys
+
+chroot arm-alpine /bin/sh -l
+
+rc-update add devfs sysinit 
+rc-update add dmesg sysinit 
+rc-update add mdev sysinit 
+rc-update add hwclock boot 
+rc-update add modules boot 
+rc-update add sysctl boot 
+rc-update add hostname boot 
+rc-update add bootmisc boot 
+rc-update add syslog boot 
+rc-update add mount-ro shutdown 
+rc-update add killprocs shutdown 
+rc-update add savecache shutdown
+

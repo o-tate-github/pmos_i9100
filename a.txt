@@ -1,0 +1,11 @@
+wget -O installer-vmlinuz http://http.us.debian.org/debian/dists/stretch/main/installer-armhf/current/images/hd-media/vmlinuz
+
+wget -O installer-initrd.gz http://http.us.debian.org/debian/dists/stretch/main/installer-armhf/current/images/hd-media/initrd.gz
+
+http://http.us.debian.org/debian/dists/stretch/main/installer-armhf/current/images/hd-media/
+
+qemu-img create -f qcow2 hda.qcow2 5G
+
+https://cdimage.debian.org/debian-cd/current/armhf/bt-cd/debian-9.9.0-armhf-netinst.iso.torrent
+
+

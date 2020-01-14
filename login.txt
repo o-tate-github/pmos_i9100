@@ -1,0 +1,6 @@
+login
+
+ssh ximia@172.16.42.1
+
+ximia@172.16.42.1:/home/ximia/
+

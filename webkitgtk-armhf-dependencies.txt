@@ -1,0 +1,32 @@
+   73  apk add cmake
+   75  apk add ninja
+   77  apk add g++
+   78  apk add ruby
+   79  apk add libgcrypt
+   80  apk add ruby-dev
+   81  apk add libgcrypt-dev
+   82  apk add libjpeg
+  131  apk add libsoup
+  132  apk add libsoup-dev
+  134  apk add libwebp
+  135  apk add libwebp-dev
+  137  apk add libsecret
+  138  apk add libsecret-dev
+  141  apk add geoclue-dev
+  142  apk add gobject-introspection
+  143  apk add gobject-introspection-dev
+  146  apk add enchant
+  148  apk add enchant-dev
+  151  apk add libxt-dev
+  154  apk add hyphen
+  155  apk add hyphen-dev
+  157  apk add openjpeg
+  158  apk add openjpeg-dev
+  160  apk add openjpeg-tools
+  161  apk add libwoff2dec
+  164  apk add woff2-dev
+  165  apk add libwoff2enc libwoff2dec
+  167  apk add gperf
+
+  libtasn1 was built from source file which was downloaded from GNU.org
+  

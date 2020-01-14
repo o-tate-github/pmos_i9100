@@ -1,0 +1,10 @@
+# wpa_passphrase "FENNEL-TRIANI" "TCXpBQ-_SahBk5UDXjgmmAypz5a6GaDSmR257RkeT_JxdNCfVA8V28-HZu4ZajA" > /etc/wpa_supplicant/wpa_supplicant.conf
+
+# vi /etc/wpa_supplicant/wpa_supplicant.conf
+
+add scan_ssid=1 right after an ssid's line.
+
+# wpa_supplicant -i wlan0 -c /etc/wpa_supplicant/wpa_supplicant.conf &
+
+# udhcpc -i wlan0
+

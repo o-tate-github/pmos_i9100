@@ -1,0 +1,87 @@
+florence
+
+gcc, make, autoconf, automake
+
+apk add --no-cache musl-dev
+これでgccが通る（ARMのバイナリa.outを作れる）。
+
+apk add --no-cache intltool
+
+pkg-config >= 0.23
+apk add --no-cache pkg-config
+...ない。
+
+https://pkg-config.freedesktop.org/releases/
+から pkg-config-0.29.2.tar.gz DL,SCP
+
+pkg-config or "glib-2.0 >= 2.16"
+
+  apk add glib-dev -> glib-2.58.1-r3
+
+./configure -> OK, make , sudo make install
+これでpkg-config0.29.2をインストール完了。
+
+再度、florenceの ./configure
+
+apk add gnome-doc-utils
+
+今度は、scrollkeeperがない。
+
+http://scrollkeeper.sourceforge.net/
+のダウンロードから、scrollkeeper-0.3.14.tar.gzをDL/SCP
+
+  ./configure
+
+  apk list libxml2 libxml2-dev
+  apk add libxslt libxslt-dev
+  
+  これでconfigure通り、make, sudo make install
+  
+再度、florenceの ./configure
+
+error: Package requirements (xext gmodule-2.0 cairo librsvg-2.0 libxml-2.0 gstreamer-1.0) were not met:
+
+apk add libxext libxext-dev
+apk add cairo-dev
+apk add librsvg-dev
+apk add apk add gstreamer gstreamer-dev
+(libxml-2.0だけapk listでは分からず)
+
+再度、florenceの ./configure
+
+error: gtk version 3.0 or superior required. Please install the dev package of gtk
+
+apk add gtk+3.0-dev
+
+再度、florenceの ./configure
+
+apk add libnotify-dev
+
+再度、florenceの ./configure
+
+configure通った！！
+
+make, make install
+
+make[2]: *** [Makefile:1160: install-doc-omf] Segmentation fault
+make[2]: Leaving directory '/home/ximia/florence-0.6.3/docs'
+make[1]: *** [Makefile:646: install-am] Error 2
+make[1]: Leaving directory '/home/ximia/florence-0.6.3/docs'
+make: *** [Makefile:456: install-recursive] Error 1
+
+でもこれはdocっぽい。アプリはできている！
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
